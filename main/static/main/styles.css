@@ -1,0 +1,68 @@
+/* Цветовая палитра */
+:root {
+    --dark-purple: #4b0082;
+    --purple: #800080;
+    --yellow: #ffea00;
+    --pink: #ff69b4;
+    --blue: #1e90ff;
+    --light-blue: #87CEFA;
+}
+
+/* Стили боковой панели */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: var(--dark-purple);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.brand {
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-left: 20px;
+}
+
+/* Навигационные ссылки */
+.nav-link {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    color: var(--yellow);
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background-color: var(--purple);
+    color: var(--pink);
+    border-radius: 8px;
+}
+
+/* Основной контент */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: var(--light-blue);
+    color: var(--dark-purple);
+    border-radius: 15px;
+    margin-left: -15px; /* Убираем отступ для соединения с боковой панелью */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+h1, h2 {
+    color: var(--yellow);
+}
+
+a {
+    color: var(--pink);
+}
+
+a:hover {
+    color: var(--yellow);
+}

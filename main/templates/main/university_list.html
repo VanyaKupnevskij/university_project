@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Университеты{% endblock %}
+
+{% block content %}
+<h1 class="my-4">Университеты</h1>
+<ul class="list-group">
+    {% for university in universities %}
+        <li class="list-group-item">
+            <a href="{% url 'university_detail' university.id %}">{{ university.name }}</a> — {{ university.location }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

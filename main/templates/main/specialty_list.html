@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Все специальности{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Список всех специальностей</h1>
+    <div class="list-group">
+        {% for specialty in specialties %}
+            <div class="specialty-item border p-3 mb-4 rounded bg-light">
+                <h3 class="mb-2">{{ specialty.name }}</h3>
+                <p>{{ specialty.description }}</p>
+                <h5>Доступна в университетах:</h5>
+                <ul>
+                    {% for university in specialty.universities.all %}
+                        <li><a href="{% url 'university_detail' university.id %}">{{ university.name }}</a></li>
+                    {% empty %}
+                        <p>Нет доступных университетов для этой специальности.</p>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
